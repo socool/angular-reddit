@@ -22,4 +22,18 @@ describe('ArticleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should initial votes', () => {
+    expect(component.article.votes).toEqual(10);
+  });
+
+  it('should valid voteUP', () => {
+    component.article.voteUp();
+    expect(component.article.votes).toEqual(11);
+  });
+
+  it('should valid voteDown', () => {
+    component.article.voteDown();
+    expect(component.article.votes).toEqual(9);
+  });
 });
